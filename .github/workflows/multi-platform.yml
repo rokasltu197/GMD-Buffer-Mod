@@ -12,14 +12,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Geode CLI
-        uses: geode-sdk/install-geode-cli@main
-
       - name: Build the mod
         uses: geode-sdk/build-geode-mod@main
         id: build
         with:
           target: Android64
+          bindings-ref: 1605f500d053f8de122bf5c7dc6d17c24866e02e
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
