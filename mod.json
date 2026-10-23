@@ -10,253 +10,94 @@
     "developer": "Lyophi",
     "description": "Predictive input buffering for Geometry Dash.",
     "settings": {
-        "guide": {
-            "type": "title",
-            "name": "How to read the timing numbers",
-            "description": "Timing windows are measured in ticks."
-        },
         "stage": {
             "type": "string",
             "name": "Main Buffer Window",
-            "description": "The default window for every mode.",
             "default": "4 ticks",
             "one-of": ["2 ticks", "4 ticks", "8 ticks", "16 ticks", "Off"]
-        },
-        "sec-ground": {
-            "type": "title",
-            "name": "Landing and orb modes",
-            "description": "Cube, ball, robot and spider."
         },
         "cube-ticks": {
             "type": "int",
             "name": "Cube Window (ticks)",
-            "description": "Cube timing window.",
             "default": -1,
             "min": -1,
-            "max": 64,
-            "control": { "input": true, "arrows": true, "slider": false }
+            "max": 64
         },
         "ball-ticks": {
             "type": "int",
             "name": "Ball Window (ticks)",
-            "description": "Ball timing window.",
             "default": -1,
             "min": -1,
-            "max": 64,
-            "control": { "input": true, "arrows": true, "slider": false }
+            "max": 64
         },
         "robot-ticks": {
             "type": "int",
             "name": "Robot Window (ticks)",
-            "description": "Robot timing window.",
             "default": -1,
             "min": -1,
-            "max": 64,
-            "control": { "input": true, "arrows": true, "slider": false }
+            "max": 64
         },
         "spider-ticks": {
             "type": "int",
             "name": "Spider Window (ticks)",
-            "description": "Spider timing window.",
             "default": -1,
             "min": -1,
-            "max": 64,
-            "control": { "input": true, "arrows": true, "slider": false }
-        },
-        "sec-fly": {
-            "type": "title",
-            "name": "Flying modes",
-            "description": "Ship, UFO, swing and wave."
+            "max": 64
         },
         "ship-ticks": {
             "type": "int",
             "name": "Ship Window (ticks)",
-            "description": "Ship timing window.",
             "default": -1,
             "min": -1,
-            "max": 64,
-            "control": { "input": true, "arrows": true, "slider": false }
+            "max": 64
         },
         "ufo-ticks": {
             "type": "int",
             "name": "UFO Window (ticks)",
-            "description": "UFO timing window.",
             "default": -1,
             "min": -1,
-            "max": 64,
-            "control": { "input": true, "arrows": true, "slider": false }
+            "max": 64
         },
         "swing-ticks": {
             "type": "int",
             "name": "Swing Window (ticks)",
-            "description": "Swing timing window.",
             "default": -1,
             "min": -1,
-            "max": 64,
-            "control": { "input": true, "arrows": true, "slider": false }
+            "max": 64
         },
         "wave-ticks": {
             "type": "int",
             "name": "Wave Window (ticks)",
-            "description": "Wave timing window.",
             "default": -1,
             "min": -1,
-            "max": 64,
-            "control": { "input": true, "arrows": true, "slider": false }
+            "max": 64
         },
         "wave-mode": {
             "type": "string",
             "name": "Wave Mode",
-            "description": "Pick how wave timing works.",
             "default": "Grid",
             "one-of": ["Min Hold", "Min Gap", "Grid"]
         },
-        "sec-keys": {
-            "type": "title",
-            "name": "Hotkeys",
-            "description": "In-game keybinds."
-        },
-        "kb-stage": {
-            "type": "keybind",
-            "name": "Key: Cycle Main Window",
-            "description": "Cycle buffer window.",
-            "default": "F6",
-            "category": "gameplay"
-        },
-        "kb-tps-up": {
-            "type": "keybind",
-            "name": "Key: TPS Up",
-            "description": "Increase TPS.",
-            "default": "F7",
-            "category": "gameplay"
-        },
-        "kb-tps-down": {
-            "type": "keybind",
-            "name": "Key: TPS Down",
-            "description": "Decrease TPS.",
-            "default": "F8",
-            "category": "gameplay"
-        },
-        "kb-debug": {
-            "type": "keybind",
-            "name": "Key: Debug Logging",
-            "description": "Toggle debug logging.",
-            "default": "F9",
-            "category": "gameplay"
-        },
-        "kb-wave": {
-            "type": "keybind",
-            "name": "Key: Cycle Wave Mode",
-            "description": "Cycle wave modes.",
-            "default": "F10",
-            "category": "gameplay"
-        },
-        "kb-section": {
-            "type": "keybind",
-            "name": "Key: Add Section Here",
-            "description": "Add level section.",
-            "default": "F11",
-            "category": "gameplay"
-        },
-        "sec-experimental": {
-            "type": "title",
-            "name": "Experimental",
-            "description": "Experimental features."
-        },
         "dual-mode": {
             "type": "bool",
-            "name": "Dual Mode Support (Experimental)",
-            "description": "Dual mode buffering.",
+            "name": "Dual Mode Support",
             "default": false
-        },
-        "ship-style": {
-            "type": "string",
-            "name": "Ship Timing Style (Experimental)",
-            "description": "Ship timing mode.",
-            "default": "Min Hold",
-            "one-of": ["Min Hold", "Min Gap", "Grid"]
-        },
-        "ufo-style": {
-            "type": "string",
-            "name": "UFO Timing Style (Experimental)",
-            "description": "UFO timing mode.",
-            "default": "Min Hold",
-            "one-of": ["Min Hold", "Min Gap", "Grid"]
-        },
-        "swing-style": {
-            "type": "string",
-            "name": "Swing Timing Style (Experimental)",
-            "description": "Swing timing mode.",
-            "default": "Min Hold",
-            "one-of": ["Min Hold", "Min Gap", "Grid"]
-        },
-        "sections": {
-            "type": "bool",
-            "name": "Level Sections (Experimental)",
-            "description": "Level section support.",
-            "default": false
-        },
-        "sec-general": {
-            "type": "title",
-            "name": "General",
-            "description": "General settings."
         },
         "tps-value": {
             "type": "int",
             "name": "Game Speed (TPS)",
-            "description": "Game speed setting.",
             "default": 240,
             "min": 1,
-            "max": 10000,
-            "control": { "input": true, "arrows": false, "slider": false }
+            "max": 10000
         },
         "debug": {
             "type": "bool",
             "name": "Debug Logging",
-            "description": "Toggle debug output.",
             "default": false
         }
     }
 }
-Mode",
-            "description": "Switches between Min Hold, Min Gap and Grid. Best used while paused.",
-            "default": "F10",
-            "category": "gameplay"
-        },
-        "kb-section": {
-            "type": "keybind",
-            "name": "Key: Add Section Here",
-            "description": "Adds a section to the current level at the percent you are at right now (experimental sections). Works in a level, including practice mode.",
-            "default": "F11",
-            "category": "gameplay"
-        },
-        "sec-experimental": {
-            "type": "title",
-            "name": "Experimental",
-            "description": "Features that are still being tested. They are off by default and may not behave perfectly."
-        },
-        "dual-mode": {
-            "type": "bool",
-            "name": "Dual Mode Support (Experimental)",
-            "description": "Turns the buffer on during **dual sections**: when a dual portal gives you a second icon in a normal one-player level.\n\n**Off** (default): dual sections use the normal game input. There is no buffering or timing help while you are dual.\n**On**: each icon is buffered by its own game mode, so a cube and a wave can each follow their own rules.\n\nThis is experimental and can behave unexpectedly, for example a click doing nothing on one icon, or an extra jump. If something feels wrong in a dual section, turn this off.\n\n2-player levels are not affected by this setting.",
-            "default": false
-        },
-        "ship-style": {
-            "type": "string",
-            "name": "Ship Timing Style (Experimental)",
-            "description": "How clicks are handled in ship mode, using the ship window.\n\n**Min Hold** (default): a quick tap is held for at least the window.\n**Min Gap**: clicks keep at least the window between a release and the next press.\n**Grid**: presses and releases snap to a fixed beat. Clicks can be delayed by up to the window, so it can make some timings impossible to hit.\n\nExperimental. Leave on Min Hold unless you are testing.",
-            "default": "Min Hold",
-            "one-of": ["Min Hold", "Min Gap", "Grid"]
-        },
-        "ufo-style": {
-            "type": "string",
-            "name": "UFO Timing Style (Experimental)",
-            "description": "How clicks are handled in UFO mode, using the UFO window.\n\n**Min Hold** (default): a quick tap is held for at least the window.\n**Min Gap**: clicks keep at least the window between a release and the next press.\n**Grid**: presses and releases snap to a fixed beat. Clicks can be delayed by up to the window, so it can make some timings impossible to hit.\n\nExperimental. Leave on Min Hold unless you are testing.",
-            "default": "Min Hold",
-            "one-of": ["Min Hold", "Min Gap", "Grid"]
-        },
-        "swing-style": {
-            "type": "string",
+: "string",
             "name": "Swing Timing Style (Experimental)",
             "description": "How clicks are handled in swing mode, using the swing window.\n\n**Min Hold** (default): a quick tap is held for at least the window.\n**Min Gap**: clicks keep at least the window between a release and the next press.\n**Grid**: presses and releases snap to a fixed beat. Clicks can be delayed by up to the window, so it can make some timings impossible to hit.\n\nExperimental. Leave on Min Hold unless you are testing.",
             "default": "Min Hold",
